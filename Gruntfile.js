@@ -46,10 +46,10 @@ module.exports = function(grunt) {
 
 	grunt.initConfig(gruntConfig);
 
-	grunt.loadNpmTasks('grunt-env');
+        grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-simple-mocha');
 	grunt.loadNpmTasks('grunt-selenium-webdriver');
-
+	
 	/* ====================================================================================================================
   * This sets up our e2e testing task for dev environments. It starts a local Selenium server, then a Connect server,
   * runs our tests in Firefox, and then shuts the Selenium and Connect servers down.
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
   * ====================================================================================================================
   */
 
-	grunt.registerTask('e2e', ['selenium_start', 'e2e:firefox', 'selenium_stop']);
+	grunt.registerTask('e2e', ['selenium_start: {options: { port: 4445 } },', 'e2e:firefox', 'selenium_stop']);
 
  /* ====================================================================================================================
   * This loop sets up the grunt e2e tasks for each environment.
