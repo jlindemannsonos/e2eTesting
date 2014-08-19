@@ -58,7 +58,7 @@ module.exports = function(grunt) {
   * ====================================================================================================================
   */
 
-	grunt.registerTask('e2e', ['selenium_start: {options: { port: 4445 } },', 'e2e:firefox', 'selenium_stop']);
+	grunt.registerTask('e2e', ['selenium_start: {options: { port: 4445 } }', 'e2e:firefox', 'selenium_stop']);
 
  /* ====================================================================================================================
   * This loop sets up the grunt e2e tasks for each environment.
